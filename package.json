@@ -1,0 +1,23 @@
+{
+  "name": "@hexlet/code",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "my-first-real-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "Welcome to the Brain Games"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antony11659/backend-project-lvl1.git"
+  },
+  "keywords": [
+    "2002"
+  ],
+  "author": "Anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antony11659/backend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Antony11659/backend-project-lvl1#readme"
+}
