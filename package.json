@@ -3,6 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "my-first-real-project",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "Welcome to the Brain Games"
