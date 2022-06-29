@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 22 12:01:34 2022
+# Make data base, printed on Wed Jun 29 20:09:22 2022
 
 # Variables
 
@@ -55,7 +55,7 @@ PATH = /root/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/rem
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-8d2b0678-7578-4c74-be8a-6a0cb9bd9bdc.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c8705c67-a773-41d1-a656-cb20f1ac0b93.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -127,8 +127,6 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
-PS1 = 💻 \[\e[1;34m\]\W\[\e[m\]\[\033[32m\]$(__git_ps1)\[\033[00m\] $ 
-# environment
 LC_ALL = C
 # environment
 HOSTTYPE = x86_64
@@ -151,7 +149,7 @@ WSL_DISTRO_NAME = Ubuntu
 # environment
 MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=4/94=4%
+# Load=68/1024=7%, Rehash=0, Collisions=4/93=4%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +157,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 1826): 13 files, no impossibilities.
+# . (device 2064, inode 1826): 14 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -181,19 +179,19 @@ brain-games:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 5):
-		node bin/brain-games.js
+	node bin/brain-games.js
 
 pablish:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 8):
-		npm publish --dry-run
+#  recipe to execute (from 'Makefile', line 11):
+	npm publish --dry-run
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-19 13:57:16.689412067
+#  Last modified 2022-06-26 22:52:51.954454449
 #  File has been updated.
 #  Successfully updated.
 
@@ -203,27 +201,41 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+brain-even:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	node bin/brain-even.js
+
+lint:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	npx eslint .
+
 install:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 2):
-		npm ci
+	npm ci
 
 # files hash-table stats:
-# Load=7/1024=1%, Rehash=0, Collisions=0/17=0%
+# Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 191 B / avg = 9 B
-# current buf: size = 8162 B / used = 191 B / count = 21 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 221 B / avg = 9 B
+# current buf: size = 8162 B / used = 221 B / count = 24 / avg = 9 B
 
-# strcache performance: lookups = 28 / hit rate = 25%
+# strcache performance: lookups = 33 / hit rate = 27%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=1/28=4%
-# Finished Make data base on Wed Jun 22 12:01:34 2022
+# Load=24/8192=0%, Rehash=0, Collisions=1/33=3%
+# Finished Make data base on Wed Jun 29 20:09:22 2022
 
  
