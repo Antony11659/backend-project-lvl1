@@ -9,7 +9,11 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
+<<<<<<< HEAD
 # Make data base, printed on Sun Jul 10 19:46:17 2022
+=======
+# Make data base, printed on Wed Jun 29 20:09:22 2022
+>>>>>>> refs/remotes/origin/main
 
 # Variables
 
@@ -56,7 +60,11 @@ PATH = /root/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/rem
 # environment
 VSCODE_LOG_STACK = false
 # environment
+<<<<<<< HEAD
 VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ce893376-c806-4bfd-b558-ff81ca23aa32.sock
+=======
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c8705c67-a773-41d1-a656-cb20f1ac0b93.sock
+>>>>>>> refs/remotes/origin/main
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -186,13 +194,21 @@ pablish:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+<<<<<<< HEAD
 #  recipe to execute (from 'Makefile', line 14):
+=======
+#  recipe to execute (from 'Makefile', line 11):
+>>>>>>> refs/remotes/origin/main
 	npm publish --dry-run
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+<<<<<<< HEAD
 #  Last modified 2022-07-09 18:51:29.775887775
+=======
+#  Last modified 2022-06-26 22:52:51.954454449
+>>>>>>> refs/remotes/origin/main
 #  File has been updated.
 #  Successfully updated.
 
@@ -220,7 +236,11 @@ lint:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+<<<<<<< HEAD
 #  recipe to execute (from 'Makefile', line 17):
+=======
+#  recipe to execute (from 'Makefile', line 14):
+>>>>>>> refs/remotes/origin/main
 	npx eslint .
 
 install:
@@ -231,13 +251,18 @@ install:
 	npm ci
 
 # files hash-table stats:
+<<<<<<< HEAD
 # Load=10/1024=1%, Rehash=0, Collisions=0/20=0%
+=======
+# Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
+>>>>>>> refs/remotes/origin/main
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
+<<<<<<< HEAD
 # strcache buffers: 1 (0) / strings = 25 / storage = 232 B / avg = 9 B
 # current buf: size = 8162 B / used = 232 B / count = 25 / avg = 9 B
 
@@ -245,5 +270,14 @@ install:
 # hash-table stats:
 # Load=25/8192=0%, Rehash=0, Collisions=1/35=3%
 # Finished Make data base on Sun Jul 10 19:46:17 2022
+=======
+# strcache buffers: 1 (0) / strings = 24 / storage = 221 B / avg = 9 B
+# current buf: size = 8162 B / used = 221 B / count = 24 / avg = 9 B
+
+# strcache performance: lookups = 33 / hit rate = 27%
+# hash-table stats:
+# Load=24/8192=0%, Rehash=0, Collisions=1/33=3%
+# Finished Make data base on Wed Jun 29 20:09:22 2022
+>>>>>>> refs/remotes/origin/main
 
  

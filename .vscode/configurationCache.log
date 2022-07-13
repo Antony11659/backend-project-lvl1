@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"buildTargets":["brain-calc","brain-even","brain-games","install","lint","pablish"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+=======
+{"buildTargets":["brain-even","brain-games","install","lint","pablish"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+>>>>>>> refs/remotes/origin/main

@@ -5,8 +5,12 @@
   "description": "my-first-real-project",
   "bin": {
     "brain-games": "bin/brain-games.js", 
+<<<<<<< HEAD
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js"
+=======
+    "brain-even": "bin/brain-even.js"
+>>>>>>> refs/remotes/origin/main
   },
   "main": "index.js",
   "scripts": {
