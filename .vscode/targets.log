@@ -2,13 +2,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 29 20:09:22 2022
+# Make data base, printed on Sun Jul 10 19:46:17 2022
 
 # Variables
 
@@ -55,7 +56,7 @@ PATH = /root/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/rem
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-c8705c67-a773-41d1-a656-cb20f1ac0b93.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ce893376-c806-4bfd-b558-ff81ca23aa32.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -185,15 +186,22 @@ pablish:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 14):
 	npm publish --dry-run
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 22:52:51.954454449
+#  Last modified 2022-07-09 18:51:29.775887775
 #  File has been updated.
 #  Successfully updated.
+
+brain-calc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 11):
+	brain-calc.js
 
 # Not a target:
 .DEFAULT:
@@ -212,7 +220,7 @@ lint:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 17):
 	npx eslint .
 
 install:
@@ -223,19 +231,19 @@ install:
 	npm ci
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/20=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 221 B / avg = 9 B
-# current buf: size = 8162 B / used = 221 B / count = 24 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 25 / storage = 232 B / avg = 9 B
+# current buf: size = 8162 B / used = 232 B / count = 25 / avg = 9 B
 
-# strcache performance: lookups = 33 / hit rate = 27%
+# strcache performance: lookups = 35 / hit rate = 28%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=1/33=3%
-# Finished Make data base on Wed Jun 29 20:09:22 2022
+# Load=25/8192=0%, Rehash=0, Collisions=1/35=3%
+# Finished Make data base on Sun Jul 10 19:46:17 2022
 
  

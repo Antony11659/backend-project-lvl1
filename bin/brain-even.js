@@ -1,35 +1,27 @@
 #!/usr/bin/env node
-import readlineSync, { question } from 'readline-sync';
+import readlineSync from 'readline-sync';
+import { gameLogic, startRule } from '../src/index.js';
 
-console.log("Welcome to the Brain Games!");
+console.log('Welcome to the brain Games!')
 
 const userName = readlineSync.question('May I have your name? ');
-let flag = true;
 
 const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
 const parityCheck = (acc) => {
-    if (flag) {
-        console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    startRule(acc, 'Answer "yes" if the number is even, otherwise answer "no".') 
+    if( acc === 3 ) {
+        return console.log(`Congratulations, ${userName}!`);
     }
+
     const n = Math.round(Math.random() * 100 );
     const question = readlineSync.question(`Question: ${n} `);
     const answer = n % 2 === 0 ? 'yes' : 'no';
-    if(acc >= 2) {
-        console.log(`Congratulations, ${userName}!`);
-    } else if(question === answer){
-        flag = false;
-        console.log(`Your answer: ${answer}\nCorrect!`);
-        acc++;
-        parityCheck(acc);  
-    } else {
-        acc = 0;
-        console.log(`${question} is wrong answer ;(. Correct answer was ${answer}`)
-        console.log(`Let's try again, ${userName}!`);
-    }
+
+    gameLogic(acc, question, answer, parityCheck, userName);
 };
 
-greeting();
+greeting()
 parityCheck(0);
