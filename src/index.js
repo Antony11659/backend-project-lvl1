@@ -1,6 +1,6 @@
 export const gameLogic = (acc, question, answer, fanc, userName) => {
     if(question == answer){
-        console.log(`Your answer: ${answer}\nCorrect!`);
+        console.log(`Correct!`);
         fanc(acc+1);
     } else {
         acc = 0;
@@ -13,4 +13,6 @@ export const startRule = (round, rule) => {
     if (round === 0) {
         console.log(rule);
     }
-}
+};
+
+export const makeRandomNum = (num) => Math.round(Math.random() * num );

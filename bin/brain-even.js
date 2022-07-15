@@ -17,7 +17,7 @@ const parityCheck = (acc) => {
     }
 
     const n = Math.round(Math.random() * 100 );
-    const question = readlineSync.question(`Question: ${n} `);
+    const question = readlineSync.question(`Question: ${n}\nYour answer: `);
     const answer = n % 2 === 0 ? 'yes' : 'no';
 
     gameLogic(acc, question, answer, parityCheck, userName);

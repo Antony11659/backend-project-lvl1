@@ -20,7 +20,7 @@ const calculation = (acc) => {
     const n2 = makeRandom(100);
     const operations = ['+', '-', '*', '/'];
     const operator = operations[makeRandom(operations.length-1)];
-    const question = readlineSync.question(`Question: ${n1} ${operator} ${n2} `);
+    const question = readlineSync.question(`Question: ${n1} ${operator} ${n2}\nYour answer: `);
     const result = (num1, num2, operat) => {
         switch(operat) {
             case '+': 

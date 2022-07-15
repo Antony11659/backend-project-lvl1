@@ -11,7 +11,10 @@ brain-calc:
 	brain-calc.js
 
 brain-gcd:
-	brain-gcd.js	
+	brain-gcd.js
+
+brain-progression:
+	brain-progression.js		
 
 pablish:
 	npm publish --dry-run
