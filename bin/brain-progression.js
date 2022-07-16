@@ -16,12 +16,11 @@ const gameProgression = (acc) => {
     if( acc === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
-    // Random Section
-    const numForDiff = makeRandomNum(5);
-    const numForFirstEl = makeRandomNum(10);
-    const array = makeSequence(numForDiff, numForFirstEl);
+    
+    const diffBetweenNum = makeRandomNum(5);
+    const firstNum = makeRandomNum(10);
+    const array = makeSequence(diffBetweenNum, firstNum);
     const ranEl = array[makeRandomNum(array.length-1)];
-    // End Random Section
 
     const question = readlineSync.question(`Question: ${getSequence(array, ranEl)}\nYour answer: `);
     const answer = ranEl;

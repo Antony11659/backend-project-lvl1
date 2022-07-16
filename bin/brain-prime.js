@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { gameLogic, makeRandomNum, startRule } from '../src/index.js';
+import primeSieve from '../games/game-prime.js';
 
-console.log('Welcome to the brain Games!')
+console.log('Welcome to the brain Games!');
 
 const userName = readlineSync.question('May I have your name? ');
 
@@ -10,18 +11,18 @@ const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
-const parityCheck = (acc) => {
-    startRule(acc, 'Answer "yes" if the number is even, otherwise answer "no".') 
+const isPrimeNum = (acc) => {
+    startRule(acc, 'Answer "yes" if the number is prime, otherwise answer "no".') 
     if( acc === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
 
     const n = makeRandomNum(100);
     const question = readlineSync.question(`Question: ${n}\nYour answer: `);
-    const answer = n % 2 === 0 ? 'yes' : 'no';
+    const answer = primeSieve(n) ? 'yes' : 'no';
 
-    gameLogic(acc, question, answer, parityCheck, userName);
+    gameLogic(acc, question, answer, isPrimeNum, userName);
 };
 
-greeting();
-parityCheck(0);
+greeting()
+isPrimeNum(0);

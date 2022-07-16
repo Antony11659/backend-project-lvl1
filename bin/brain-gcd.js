@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 import getGCD from '../games/game-gcd.js';
 import { gameLogic, makeRandomNum, startRule } from '../src/index.js';
 
-console.log('Welcome to the brain Games!')
+console.log('Welcome to the brain Games!');
 
 const userName = readlineSync.question('May I have your name? ');
 

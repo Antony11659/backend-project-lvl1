@@ -15,5 +15,5 @@ export const getSequence = (arr, el) => {
         result.push(arr[i]);
       }
     }
-    return result.join(', ');
+    return result.join(' ');
   };

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { gameLogic, startRule } from '../src/index.js';
+import { produceCalc } from '../games/game-calc.js';
+import { gameLogic, makeRandomNum, startRule } from '../src/index.js';
 
 console.log("Welcome to the Brain Games!");
 
@@ -15,32 +16,12 @@ const calculation = (acc) => {
     if( acc === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
-    const makeRandom = (n) => Math.round(Math.random() * n );
-    const n1 = makeRandom(100);
-    const n2 = makeRandom(100);
+    const n1 = makeRandomNum(10);
+    const n2 = makeRandomNum(10);
     const operations = ['+', '-', '*', '/'];
-    const operator = operations[makeRandom(operations.length-1)];
-    const question = readlineSync.question(`Question: ${n1} ${operator} ${n2}\nYour answer: `);
-    const result = (num1, num2, operat) => {
-        switch(operat) {
-            case '+': 
-              return num1 + num2
-              break
-            case '-': 
-              return num1 - num2
-              break
-            case '*': 
-              return num1 * num2
-              break
-            case '/': 
-              return num1 / num2
-              break
-          
-            default:
-                return false;
-          }
-    };
-    const answer = result(n1, n2, operator);
+    const randomOperator = operations[makeRandomNum(operations.length-1)];
+    const question = readlineSync.question(`Question: ${n1} ${randomOperator} ${n2}\nYour answer: `);
+    const answer = produceCalc(n1, n2, randomOperator);
     gameLogic(acc, question, answer, calculation, userName);
 };
 
