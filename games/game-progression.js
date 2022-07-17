@@ -1,6 +1,6 @@
 export const makeSequence = (numForDiff, numForFirstEl) => {
     const arr = [numForFirstEl];
-    while (arr.length < 7) {
+    while (arr.length < 10) {
       arr.push(arr[arr.length-1] + numForDiff);
     }
     return arr;
