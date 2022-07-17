@@ -12,7 +12,7 @@ const greeting = () => {
 };
 
 const gameProgression = (round) => {
-    startRule(round, 'What number is missing in the progression?'); 
+    startRule(round, 'What number is missing in this progression?'); 
     if( round === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
