@@ -10,9 +10,9 @@ const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
-const parityCheck = (acc) => {
-    startRule(acc, 'Answer "yes" if the number is even, otherwise answer "no".') 
-    if( acc === 3 ) {
+const parityCheck = (round) => {
+    startRule(round, 'Answer "yes" if the number is even, otherwise answer "no".') 
+    if( round === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
 
@@ -20,7 +20,7 @@ const parityCheck = (acc) => {
     const question = readlineSync.question(`Question: ${n}\nYour answer: `);
     const answer = n % 2 === 0 ? 'yes' : 'no';
 
-    gameLogic(acc, question, answer, parityCheck, userName);
+    gameLogic(round, question, answer, parityCheck, userName);
 };
 
 greeting();

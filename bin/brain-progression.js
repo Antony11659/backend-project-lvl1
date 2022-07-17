@@ -11,9 +11,9 @@ const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
-const gameProgression = (acc) => {
-    startRule(acc, 'What number is missing in the progression?'); 
-    if( acc === 3 ) {
+const gameProgression = (round) => {
+    startRule(round, 'What number is missing in the progression?'); 
+    if( round === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
     
@@ -25,7 +25,7 @@ const gameProgression = (acc) => {
     const question = readlineSync.question(`Question: ${getSequence(array, ranEl)}\nYour answer: `);
     const answer = ranEl;
 
-    gameLogic(acc, question, answer, gameProgression, userName);
+    gameLogic(round, question, answer, gameProgression, userName);
 };
 
 greeting();

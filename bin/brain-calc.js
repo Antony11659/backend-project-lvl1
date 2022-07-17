@@ -11,9 +11,9 @@ const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
-const calculation = (acc) => {
-    startRule(acc, 'What is the result of the expression?') 
-    if( acc === 3 ) {
+const calculation = (round) => {
+    startRule(round, 'What is the result of the expression?') 
+    if( round === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
     const n1 = makeRandomNum(10);
@@ -22,7 +22,7 @@ const calculation = (acc) => {
     const randomOperator = operations[makeRandomNum(operations.length-1)];
     const question = readlineSync.question(`Question: ${n1} ${randomOperator} ${n2}\nYour answer: `);
     const answer = produceCalc(n1, n2, randomOperator);
-    gameLogic(acc, question, answer, calculation, userName);
+    gameLogic(round, question, answer, calculation, userName);
 };
 
 greeting();

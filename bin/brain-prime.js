@@ -11,9 +11,9 @@ const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
-const isPrimeNum = (acc) => {
-    startRule(acc, 'Answer "yes" if the number is prime, otherwise answer "no".') 
-    if( acc === 3 ) {
+const isPrimeNum = (round) => {
+    startRule(round, 'Answer "yes" if the number is prime, otherwise answer "no".') 
+    if( round === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
 
@@ -21,7 +21,7 @@ const isPrimeNum = (acc) => {
     const question = readlineSync.question(`Question: ${n}\nYour answer: `);
     const answer = primeSieve(n) ? 'yes' : 'no';
 
-    gameLogic(acc, question, answer, isPrimeNum, userName);
+    gameLogic(round, question, answer, isPrimeNum, userName);
 };
 
 greeting()

@@ -11,9 +11,9 @@ const greeting = () => {
     return console.log(`Hello ${userName}`);
 };
 
-const gameGCD = (acc) => {
-    startRule(acc, 'Find the greatest common divisor of given numbers.') 
-    if( acc === 3 ) {
+const gameGCD = (round) => {
+    startRule(round, 'Find the greatest common divisor of given numbers.') 
+    if( round === 3 ) {
         return console.log(`Congratulations, ${userName}!`);
     }
 
@@ -22,7 +22,7 @@ const gameGCD = (acc) => {
     const question = readlineSync.question(`Question: ${n1} ${n2}\nYour answer: `);
     const answer = getGCD(n1, n2);
 
-    gameLogic(acc, question, answer, gameGCD, userName);
+    gameLogic(round, question, answer, gameGCD, userName);
 };
 
 greeting();
