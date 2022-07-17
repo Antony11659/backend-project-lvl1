@@ -20,7 +20,7 @@ const gameProgression = (round) => {
     const diffBetweenNum = makeRandomNum(5);
     const firstNum = makeRandomNum(10);
     const array = makeSequence(diffBetweenNum, firstNum);
-    const ranEl = array[makeRandomNum(array.length-1)];
+    const ranEl = array[makeRandomNum(array.length-2)+1];
 
     const question = readlineSync.question(`Question: ${getSequence(array, ranEl)}\nYour answer: `);
     const answer = ranEl;
