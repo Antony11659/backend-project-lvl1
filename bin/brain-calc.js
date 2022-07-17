@@ -18,7 +18,7 @@ const calculation = (round) => {
     }
     const n1 = makeRandomNum(10);
     const n2 = makeRandomNum(10);
-    const operations = ['+', '-', '*', '/'];
+    const operations = ['+', '-', '*'];
     const randomOperator = operations[makeRandomNum(operations.length-1)];
     const question = readlineSync.question(`Question: ${n1} ${randomOperator} ${n2}\nYour answer: `);
     const answer = produceCalc(n1, n2, randomOperator);

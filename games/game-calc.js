@@ -9,9 +9,6 @@ export const produceCalc = (num1, num2, operat) => {
         case '*': 
           return num1 * num2
           break
-        case '/': 
-          return num1 / num2
-          break
       
         default:
             return false;
