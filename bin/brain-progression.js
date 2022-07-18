@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { getSequence, makeSequence } from '../games/game-progression.js';
+import { makeArray, makeSequence } from '../games/game-progression.js';
 import { gameLogic, makeRandomNum, startRule } from '../src/index.js';
 
 console.log('Welcome to the Brain Games!');
@@ -19,10 +19,10 @@ const gameProgression = (round) => {
     
     const diffBetweenNum = makeRandomNum(5);
     const firstNum = makeRandomNum(10);
-    const array = makeSequence(diffBetweenNum, firstNum);
+    const array = makeArray(diffBetweenNum, firstNum);
     const ranEl = array[makeRandomNum(array.length-2)+1];
 
-    const question = readlineSync.question(`Question: ${getSequence(array, ranEl)}\nYour answer: `);
+    const question = readlineSync.question(`Question: ${makeSequence(array, ranEl)}\nYour answer: `);
     const answer = ranEl;
 
     gameLogic(round, question, answer, gameProgression, userName);
