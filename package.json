@@ -30,10 +30,10 @@
   },
   "homepage": "https://github.com/Antony11659/backend-project-lvl1#readme",
   "dependencies": {
-    "eslint-config-airbnb-base": "^15.0.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0"
