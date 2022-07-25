@@ -1,29 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import getGCD from '../games/game-gcd.js';
-import { gameLogic, makeRandomNum, startRule } from '../src/index.js';
+import { gameGCD } from "../games/game-gcd.js";
 
-console.log('Welcome to the brain Games!');
-
-const userName = readlineSync.question('May I have your name? ');
-
-const greeting = () => {
-    return console.log(`Hello, ${userName}!`);
-};
-
-const gameGCD = (round) => {
-    startRule(round, 'Find the greatest common divisor of given numbers.') 
-    if( round === 3 ) {
-        return console.log(`Congratulations, ${userName}!`);
-    }
-
-    const n1 = makeRandomNum(10);
-    const n2 = makeRandomNum(10);
-    const question = readlineSync.question(`Question: ${n1} ${n2}\nYour answer: `);
-    const answer = getGCD(n1, n2);
-
-    gameLogic(round, question, answer, gameGCD, userName);
-};
-
-greeting();
-gameGCD(0);
+gameGCD();

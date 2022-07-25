@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "description": "my-first-real-project",
   "bin": {
-    "brain-games": "bin/brain-games.js", 
+    "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
@@ -33,9 +33,9 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "^15.0.0",
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0"
   }
 }
