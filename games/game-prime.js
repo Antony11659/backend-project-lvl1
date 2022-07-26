@@ -7,6 +7,9 @@ export const isPrimeNum = () => {
     const question = (n) => readlineSync.question(`Question: ${n}\nYour answer: `);
 
     const primeSieve = (n) => {
+      if (n <= 1) {
+        return 'no';
+      }
       const result = [];
       for (var i = 2; i < n; i++){
         if(n % i === 0){
