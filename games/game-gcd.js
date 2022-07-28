@@ -10,7 +10,7 @@ import readlineSync from 'readline-sync';
         let a = num1 > num2 ? num1 : num2;
         let b = num1 < num2 ? num1 : num2;
         let r = a % b;
-          if(b === 0) {
+          if ( b === 0 ) {
             return a;
           }
         return getGCD(b, r);

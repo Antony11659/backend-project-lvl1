@@ -4,12 +4,12 @@ import readlineSync from 'readline-sync';
 export const calculation = () => {
   const message = 'What is the result of the expression?';
   
-  const makeOperator = (a, b) => {
+  const makeOperator = () => {
     const operations = ['+', '-', '*'];
     return operations[Math.round(Math.random() * 2)];
   };
   
-  const question = (a, b, operator) => readlineSync.question(`Question: ${a} ${operator} ${b}\nYour answer: `);
+  const question = (num1, num2, operator) => readlineSync.question(`Question: ${num1} ${operator} ${num2}\nYour answer: `);
   
   const produceCalc = (num1, num2, operat) => {
     switch(operat) {

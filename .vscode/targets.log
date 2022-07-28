@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 21 08:15:17 2022
+# Make data base, printed on Thu Jul 28 09:18:55 2022
 
 # Variables
 
@@ -49,7 +51,7 @@ PATH = /root/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/rem
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6e760e28-f60e-4b84-9d8e-bd4b2209ae8a.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f9147d1a-5829-498d-bd7b-68e73968cd4d.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -147,9 +149,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 27865): 14 files, no impossibilities.
+# . (device 2064, inode 27865): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -248,14 +250,12 @@ install:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 265 B / avg = 9 B
-# current buf: size = 8162 B / used = 265 B / count = 28 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 278 B / avg = 9 B
+# current buf: size = 8162 B / used = 278 B / count = 29 / avg = 9 B
 
-# strcache performance: lookups = 41 / hit rate = 31%
+# strcache performance: lookups = 42 / hit rate = 30%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Thu Jul 21 08:15:17 2022
+# Load=29/8192=0%, Rehash=0, Collisions=1/42=2%
+# Finished Make data base on Thu Jul 28 09:18:55 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

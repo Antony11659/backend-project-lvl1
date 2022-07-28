@@ -12,16 +12,16 @@ export const generalGameLogic = (startRule, ques, answer, secondNum, fanc, makeA
     const makeRandomNum = (num) => Math.round(Math.random() * num) + 1;
     
     for (var i = 0; i < 3; i++) {
-        const n = makeRandomNum(10);
-        const n2 = secondNum !== null ? makeRandomNum(secondNum) : null;
-        const arrayForProgression = makeArrey !== null ? makeArrey(n, n2) : null;
-        const randomElement = fanc !== null ? fanc(n2, arrayForProgression) : null;
-        const question = ques(n, n2, randomElement, arrayForProgression);
+        const randomNum = makeRandomNum(10);
+        const randomNumSecond = secondNum !== null ? makeRandomNum(secondNum) : null;
+        const arrayForProgression = makeArrey !== null ? makeArrey(randomNum, randomNumSecond) : null;
+        const randomElement = fanc !== null ? fanc(randomNumSecond, arrayForProgression) : null;
+        const question = ques(randomNum, randomNumSecond, randomElement, arrayForProgression);
         
-        if (question == answer(n, n2, randomElement)){ 
+        if (question == answer(randomNum, randomNumSecond, randomElement)){ 
             console.log('Correct!');
         }else{
-            return console.log(`${question} is wrong answer ;(. Correct answer was ${answer(n, n2, randomElement)}\nLet's try again, ${userName}!`);
+            return console.log(`${question} is wrong answer ;(. Correct answer was ${answer(randomNum, randomNumSecond, randomElement)}\nLet's try again, ${userName}!`);
         }  
     }
     return console.log(`Congratulations, ${userName}!`);
