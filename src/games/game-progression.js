@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generalGameLogic } from '../src/index.js';
+import { generalGameLogic } from '../index.js';
   
 export const gameProgression = () => {
     const message = 'What number is missing in this progression?'; 

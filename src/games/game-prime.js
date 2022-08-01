@@ -1,4 +1,4 @@
-import { generalGameLogic } from "../src/index.js";
+import { generalGameLogic } from "../index.js";
 import readlineSync from 'readline-sync';
 
 export const isPrimeNum = () => {
