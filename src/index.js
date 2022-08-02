@@ -1,28 +1,36 @@
 import readlineSync from 'readline-sync';
 
-export const generalGameLogic = (startRule, ques, answer, secondNum, fanc, makeArrey = null) => {
+export const makeRandomNum = (num) => Math.round(Math.random() * num) + 1;
+
+export const generalGameLogic = (gameRule, makePair) => {
     console.log('Welcome to the brain Games!');
 
     const userName = readlineSync.question('May I have your name? ');
     
     console.log(`Hello, ${userName}!`);
 
-    console.log(startRule);
+    console.log(gameRule);
 
-    const makeRandomNum = (num) => Math.round(Math.random() * num) + 1;
-    
-    for (var i = 0; i < 3; i++) {
-        const randomNum = makeRandomNum(10);
-        const randomNumSecond = secondNum !== null ? makeRandomNum(secondNum) : null;
-        const arrayForProgression = makeArrey !== null ? makeArrey(randomNum, randomNumSecond) : null;
-        const randomElement = fanc !== null ? fanc(randomNumSecond, arrayForProgression) : null;
-        const question = ques(randomNum, randomNumSecond, randomElement, arrayForProgression);
-        
-        if (question == answer(randomNum, randomNumSecond, randomElement)){ 
+    const engine = (makeAnswers, round) => {
+
+        if (round  === 3) {
+            return console.log(`Congratulations, ${userName}!`);
+        } 
+
+        const answers = makeAnswers();
+
+        const userAnswer = answers[0];
+
+        const correctAnswer = answers[1];
+      
+        if (userAnswer === correctAnswer) { 
             console.log('Correct!');
-        }else{
-            return console.log(`${question} is wrong answer ;(. Correct answer was ${answer(randomNum, randomNumSecond, randomElement)}\nLet's try again, ${userName}!`);
-        }  
-    }
-    return console.log(`Congratulations, ${userName}!`);
+        } else{
+            return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}\nLet's try again, ${userName}!`);   
+        }
+        return engine(makeAnswers, round += 1);
+    };
+
+    return engine(makePair, 0);       
+    
 };
