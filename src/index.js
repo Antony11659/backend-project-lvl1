@@ -23,7 +23,7 @@ export const generalGameLogic = (gameRule, makePair) => {
 
         const correctAnswer = answers[1];
       
-        if (userAnswer === correctAnswer) { 
+        if (userAnswer == correctAnswer) { 
             console.log('Correct!');
         } else{
             return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}\nLet's try again, ${userName}!`);   
