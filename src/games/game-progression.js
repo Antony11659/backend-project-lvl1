@@ -8,13 +8,13 @@ export const gameProgression = () => {
       
       const makeSequenceAndHiddenEl = () => {
   
-        const firstEl = makeRandomNum(10);
+        const firstEl = makeRandomNum(9);
         
-        const numForDiff = makeRandomNum(5);
+        const numForDiff = makeRandomNum(4);
         
         const makeArrey = (firstEl, numForDiff) => {
               const arr = [firstEl];
-                 while (arr.length < 8) {
+                 while (arr.length < 10) {
                    arr.push(arr[arr.length-1] + numForDiff);
                  }
                 return arr; 
@@ -24,7 +24,7 @@ export const gameProgression = () => {
               let min = firstEl;
               let max = arr.length - 1;
               const i = Math.floor(Math.random() * (max - min + 1)) + min;
-              return  arr[i]
+              return  arr[i];
             };
         
         const array = makeArrey(firstEl, numForDiff);
