@@ -1,62 +1,58 @@
 import readlineSync from 'readline-sync';
 import { generalGameLogic, makeRandomNum } from '../index.js';
-  
-export const gameProgression = () => {
-    const message = 'What number is missing in this progression?';
-    
-    const makeArreyOfAnswers = () => {
-      
-      const makeSequenceAndHiddenEl = () => {
-  
-        const firstEl = makeRandomNum(9);
-        
-        const numForDiff = makeRandomNum(4);
-        
-        const makeArrey = (firstEl, numForDiff) => {
-              const arr = [firstEl];
-                 while (arr.length < 10) {
-                   arr.push(arr[arr.length-1] + numForDiff);
-                 }
-                return arr; 
-            };
-        
-        const makeHideEl = (firstEl, arr) => {
-              let min = firstEl;
-              let max = arr.length - 1;
-              const i = Math.floor(Math.random() * (max - min + 1)) + min;
-              return  arr[i];
-            };
-        
-        const array = makeArrey(firstEl, numForDiff);
-        
-        const hiddenEl = makeHideEl(firstEl, array);
-      
-        const sequence = [];
-      
-        for (var i = 0; i < array.length; i++) {
-                if ( array[i] == hiddenEl ){
-                  sequence.push('..');
-                }else {
-                  sequence.push(array[i]);
-                }
-              }
-        
-        return [sequence.join(' '), hiddenEl]
-              
+
+const gameProgression = () => {
+  const message = 'What number is missing in this progression?';
+
+  const makeArreyOfAnswers = () => {
+    const makeSequenceAndHiddenEl = () => {
+      const firstEl = makeRandomNum(8);
+
+      const numForDiff = makeRandomNum(4);
+
+      const makeArrey = (firstElement, numDiff) => {
+        const arr = [firstElement];
+        while (arr.length < 10) {
+          arr.push(arr[arr.length - 1] + numDiff);
+        }
+        return arr;
       };
 
-      const pairOfSeqAndHidEl = makeSequenceAndHiddenEl();
+      const makeHideEl = (firstIndex, arr) => {
+        const min = firstIndex;
+        const max = arr.length - 1;
+        const i = Math.floor(Math.random() * (max - min + 1)) + min;
+        return arr[i];
+      };
 
-      const sequence = pairOfSeqAndHidEl[0];
+      const array = makeArrey(firstEl, numForDiff);
 
-      const userAnswer = readlineSync.question(`Question: ${sequence}\nYour answer: `);
-      
-      const correctAnswer =  pairOfSeqAndHidEl[1];
-    
-      return [userAnswer, correctAnswer];
-    
+      const hiddenEl = makeHideEl(firstEl, array);
+
+      const sequence = [];
+
+      for (let i = 0; i < array.length; i += 1) {
+        if (array[i] === hiddenEl) {
+          sequence.push('..');
+        } else {
+          sequence.push(array[i]);
+        }
+      }
+
+      return [sequence.join(' '), hiddenEl];
     };
-    
-    return generalGameLogic(message, makeArreyOfAnswers);
+
+    const pairOfSeqAndHidEl = makeSequenceAndHiddenEl();
+
+    const sequence = pairOfSeqAndHidEl[0];
+
+    const userAnswer = readlineSync.question(`Question: ${sequence}\nYour answer: `);
+
+    const correctAnswer = pairOfSeqAndHidEl[1];
+
+    return [userAnswer, correctAnswer];
   };
-    
+
+  return generalGameLogic(message, makeArreyOfAnswers);
+};
+export default gameProgression;
