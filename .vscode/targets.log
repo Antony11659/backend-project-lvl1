@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  8 05:57:36 2022
+# Make data base, printed on Sun Aug 14 06:43:28 2022
 
 # Variables
 
@@ -51,7 +51,7 @@ PATH = /root/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/rem
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a1a76264-5a9c-4a19-ae9c-0a2896d2ebc9.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-dec2e2b4-f727-4fcb-a3e2-b63c4a180fff.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -138,8 +138,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=4/88=5%
+# Load=64/1024=6%, Rehash=0, Collisions=4/89=4%
 
 # Pattern-specific Variable Values
 
@@ -150,7 +152,6 @@ WSL_DISTRO_NAME = Ubuntu
 # . (device 2064, inode 27865): 14 files, no impossibilities.
 
 # 14 files, no impossibilities in 1 directories.
- 
 
 # Implicit Rules
 
@@ -255,6 +256,6 @@ install:
 # strcache performance: lookups = 41 / hit rate = 31%
 # hash-table stats:
 # Load=28/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Mon Aug  8 05:57:36 2022
+# Finished Make data base on Sun Aug 14 06:43:28 2022
 
  

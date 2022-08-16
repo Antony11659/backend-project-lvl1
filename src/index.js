@@ -1,8 +1,19 @@
 import readlineSync from 'readline-sync';
 
+// numForRandom must be less than the expected number by one!
 export const makeRandomNum = (num) => Math.round(Math.random() * num) + 1;
 
-export const generalGameLogic = (gameRule, makePair) => {
+const makeCorrectAnswer = (answer) => {
+  if (answer === true) {
+    return 'yes';
+  }
+  if (answer === false) {
+    return 'no';
+  }
+  return answer;
+};
+
+const generalGameLogic = (gameRule, pairOfQuestionsAndCorrectAnswer) => {
   console.log('Welcome to the brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -11,26 +22,28 @@ export const generalGameLogic = (gameRule, makePair) => {
 
   console.log(gameRule);
 
-  const engine = (makeAnswers, round) => {
-    if (round === 3) {
-      return console.log(`Congratulations, ${userName}!`);
-    }
+  const engine = (array) => {
+    const round = 3;
 
-    const answers = makeAnswers();
+    const checkAnswer = array[1];
 
-    const userAnswer = answers[0];
+    for (let i = 0; i < round; i += 1) {
+      const question = array[0]();
+      const questionForUser = question.join(' ');
+      const userAnswer = readlineSync.question(`Question: ${questionForUser}\nYour answer: `);
+      const correctAnswer = makeCorrectAnswer(checkAnswer(question)).toString();
 
-    const correctAnswer = answers[1];
-
-    // eslint-disable-next-line eqeqeq
-    if (userAnswer == correctAnswer) {
+      if (userAnswer !== correctAnswer) {
+        console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
+        return console.log(`Let's try again, ${userName}!`);
+      }
       console.log('Correct!');
-    } else {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}\nLet's try again, ${userName}!`);
     }
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    return engine(makeAnswers, round += 1);
+
+    return console.log(`Congratulations, ${userName}!`);
   };
 
-  return engine(makePair, 0);
+  return engine(pairOfQuestionsAndCorrectAnswer);
 };
+
+export default generalGameLogic;

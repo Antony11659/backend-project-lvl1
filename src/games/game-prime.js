@@ -1,33 +1,37 @@
-import readlineSync from 'readline-sync';
-import { generalGameLogic, makeRandomNum } from '../index.js';
+import generalGameLogic, { makeRandomNum } from '../index.js';
+
+const message = 'Answer "yes" if the number is prime, otherwise answer "no".';
+
+const numForRandom = 9;
+
+const primeSieve = (arr) => {
+  const n = arr[0];
+
+  if (n <= 1) {
+    return false;
+  }
+
+  const result = [];
+
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      result.push(i);
+    }
+  }
+  const sieve = result.length <= 0;
+  return sieve;
+};
+
+const makeQuestionElements = () => {
+  const n = makeRandomNum(numForRandom);
+  return [n];
+};
+
+const isAnswerCorrect = primeSieve;
 
 const isPrimeNum = () => {
-  const message = 'Answer "yes" if the number is prime, otherwise answer "no".';
-
-  const primeSieve = (n) => {
-    if (n <= 1) {
-      return 'no';
-    }
-    const result = [];
-    for (let i = 2; i < n; i += 1) {
-      if (n % i === 0) {
-        result.push(i);
-      }
-    }
-    const sieve = result.length > 0 ? 'no' : 'yes';
-    return sieve;
-  };
-
-  const makeArreyOfAnswers = () => {
-    const n = makeRandomNum(10);
-
-    const userAnswer = readlineSync.question(`Question: ${n}\nYour answer: `);
-
-    const correctAnswer = primeSieve(n);
-
-    return [userAnswer, correctAnswer];
-  };
-
-  return generalGameLogic(message, makeArreyOfAnswers);
+  const makeArrayOfAnswers = [makeQuestionElements, isAnswerCorrect];
+  return generalGameLogic(message, makeArrayOfAnswers);
 };
+
 export default isPrimeNum;
