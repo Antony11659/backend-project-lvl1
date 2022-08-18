@@ -36,3 +36,10 @@ To install a package from the operating system, use the npm link command. It mus
 [![Actions Status](https://github.com/Antony11659/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Antony11659/backend-project-lvl1/actions)
 
 <a href="https://codeclimate.com/github/Antony11659/backend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/ba2b899c53395a077b47/maintainability" /></a><br />
+
+https://asciinema.org/a/ks0lNE5gpaROqn778q86WBjKu<br />
+https://asciinema.org/a/LWcR7h7TFHK4eUs7EF4LZ4ZuR<br />
+https://asciinema.org/a/W0Y44vq4Fun67ENeOeJ6P4zPP<br />
+https://asciinema.org/a/4KBEOEqPSgrnL8QJauUWnslIp<br />
+https://asciinema.org/a/U0YCh59d1989Pz4wPeEV6YbG9<br />
+https://asciinema.org/a/t8Y1KVknHIF1UxQwO4oa4dxsc
