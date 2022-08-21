@@ -35,7 +35,7 @@ const executeGameLogic = (gameRule, makeQuestionAnswer) => {
       console.log('Correct!');
     }
 
-    console.log(`Congratulations, ${userName}!`);
+    return console.log(`Congratulations, ${userName}!`);
   };
 
   return runRound(makeQuestionAnswer);
