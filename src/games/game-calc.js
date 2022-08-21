@@ -1,19 +1,16 @@
-import generalGameLogic, { makeRandomNum } from '../index.js';
+import executeGameLogic from '../index.js';
+import makeRandomNum from '../random.js';
 
 const message = 'What is the result of the expression?';
 
 const numForRandom = 9;
 
 const makeOperator = () => {
-  // null gets rid of the side effect
-  const operations = [null, '+', '-', '*'];
-  return operations[makeRandomNum(2)];
+  const operations = ['+', '-', '*'];
+  return operations[makeRandomNum(operations.length - 1)];
 };
-const produceCalculation = (arr) => {
-  const num1 = arr[0];
-  const operator = arr[1];
-  const num2 = arr[2];
 
+const produceCalculation = (num1, operator, num2) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -27,18 +24,17 @@ const produceCalculation = (arr) => {
   }
 };
 
-const makeQuestionElements = () => {
-  const firstNum = makeRandomNum(numForRandom);
-  const secondNum = makeRandomNum(numForRandom);
-  const operation = makeOperator();
-  return [firstNum, operation, secondNum];
+const makeAnswer = (expression) => {
+  const [num1, operator, num2] = expression;
+  return produceCalculation(num1, operator, num2);
 };
 
-const isAnswerCorrect = produceCalculation;
-
-const calculation = () => {
-  const makeArrayOfAnswers = [makeQuestionElements, isAnswerCorrect];
-  return generalGameLogic(message, makeArrayOfAnswers);
+const makeQuestionAnswer = () => {
+  const [firstNum, secondNum, operation] = [makeRandomNum, makeRandomNum, makeOperator];
+  const expression = [firstNum(numForRandom), operation(), secondNum(numForRandom)];
+  return [expression, makeAnswer(expression)];
 };
+
+const calculation = () => executeGameLogic(message, makeQuestionAnswer);
 
 export default calculation;
