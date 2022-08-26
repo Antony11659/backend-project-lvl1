@@ -1,59 +1,40 @@
-import generalGameLogic, { makeRandomNum } from '../index.js';
+import executeGameLogic from '../index.js';
+import { makeRandomNum, makeArray } from '../libraryGames.js';
 
 const message = 'What number is missing in this progression?';
 
 const arrayLength = 10;
 
-const gapBetweenElements = 4;
+const maxGapBetweenElements = 5;
+
+const minGapBetweenElements = 1;
 
 const sizeOfFistEl = 8;
 
-const makeArray = (firstElement, numDiff) => {
-  const arr = [firstElement];
-  while (arr.length < arrayLength) {
-    arr.push(arr[arr.length - 1] + numDiff);
-  }
-  return arr;
-};
-
-const hideEl = (firstIndex, arr) => {
-  const min = firstIndex;
-  const max = arr.length - 1;
-  const i = Math.floor(Math.random() * (max - min + 1)) + min;
-  return arr[i];
-};
-
-const makeQuestionElements = () => {
-  const firstEl = makeRandomNum(sizeOfFistEl);
-  const numForDiff = makeRandomNum(gapBetweenElements);
-  const array = makeArray(firstEl, numForDiff);
-  const answer = hideEl(firstEl, array);
-  const question = [];
-
-  for (let i = 0; i < array.length; i += 1) {
-    if (array[i] === answer) {
-      question.push('..');
+const makeSequence = (sequenceLength) => {
+  const result = [];
+  const el = [];
+  const hiddenEl = makeRandomNum(sequenceLength - 1);
+  const gap = makeRandomNum(maxGapBetweenElements, minGapBetweenElements);
+  let firstNum = makeRandomNum(sizeOfFistEl);
+  for (let i = 0; i < sequenceLength; i += 1) {
+    if (i === hiddenEl) {
+      result.push('..');
+      firstNum += gap;
+      el.push(firstNum);
     } else {
-      question.push(array[i]);
+      firstNum += gap;
+      result.push(firstNum);
     }
   }
-
-  return question;
+  return makeArray(result, el);
 };
 
-const isAnswerCorrect = (array) => {
-  const index = array.indexOf('..');
-  const elementIsZero = array.length / 2 > index;
-  const goRight = array[index + 2] - array[index + 1];
-  const goLeft = array[index - 1] - array[index - 2];
-  const difference = elementIsZero ? goRight : goLeft;
-  const element = elementIsZero ? array[index + 1] - difference : array[index - 1] + difference;
-  return element;
+const makeQuestionAnswer = () => {
+  const [question, answer] = makeSequence(arrayLength);
+  return makeArray(question, answer);
 };
 
-const gameProgression = () => {
-  const makeArrayOfAnswers = [makeQuestionElements, isAnswerCorrect];
-  return generalGameLogic(message, makeArrayOfAnswers);
-};
+const playGameProgression = () => executeGameLogic(message, makeQuestionAnswer);
 
-export default gameProgression;
+export default playGameProgression;

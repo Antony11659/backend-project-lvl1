@@ -1,14 +1,17 @@
-import generalGameLogic, { makeRandomNum } from '../index.js';
+import executeGameLogic from '../index.js';
+import { makeRandomNum, makeArray } from '../libraryGames.js';
 
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const numForRandom = 9;
-const isAnswerCorrect = (n) => (n % 2 === 0);
-const makeQuestionElements = () => [makeRandomNum(numForRandom)];
+const numForRandom = 10;
 
-const parityGame = () => {
-  const makeArrayOfAnswers = [makeQuestionElements, isAnswerCorrect];
-  return generalGameLogic(message, makeArrayOfAnswers);
+const isAnswerCorrect = (n) => (n % 2 === 0);
+
+const makeQuestionAnswer = () => {
+  const question = makeArray(makeRandomNum(numForRandom));
+  return makeArray(question, isAnswerCorrect(...question));
 };
 
-export default parityGame;
+const playParityGame = () => executeGameLogic(message, makeQuestionAnswer);
+
+export default playParityGame;

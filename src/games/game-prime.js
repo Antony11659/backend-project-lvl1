@@ -1,12 +1,11 @@
-import generalGameLogic, { makeRandomNum } from '../index.js';
+import executeGameLogic from '../index.js';
+import { makeRandomNum, makeArray } from '../libraryGames.js';
 
 const message = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
-const numForRandom = 9;
+const numForRandom = 10;
 
-const primeSieve = (arr) => {
-  const n = arr[0];
-
+const makePrimeSieve = (n) => {
   if (n <= 1) {
     return false;
   }
@@ -22,16 +21,11 @@ const primeSieve = (arr) => {
   return sieve;
 };
 
-const makeQuestionElements = () => {
-  const n = makeRandomNum(numForRandom);
-  return [n];
+const makeQuestionAnswer = () => {
+  const question = makeArray(makeRandomNum(numForRandom));
+  return makeArray(question, makePrimeSieve(...question));
 };
 
-const isAnswerCorrect = primeSieve;
+const playGamePrimeNum = () => executeGameLogic(message, makeQuestionAnswer);
 
-const isPrimeNum = () => {
-  const makeArrayOfAnswers = [makeQuestionElements, isAnswerCorrect];
-  return generalGameLogic(message, makeArrayOfAnswers);
-};
-
-export default isPrimeNum;
+export default playGamePrimeNum;

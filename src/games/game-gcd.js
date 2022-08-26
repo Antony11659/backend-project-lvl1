@@ -1,18 +1,12 @@
-import generalGameLogic, { makeRandomNum } from '../index.js';
+import executeGameLogic from '../index.js';
+import { makeRandomNum, makeArray } from '../libraryGames.js';
 
 const message = 'Find the greatest common divisor of given numbers.';
 
-const numForRandom = 9;
-
-const makeQuestionElements = () => {
-  const firstNum = makeRandomNum(numForRandom);
-  const secondNum = makeRandomNum(numForRandom);
-  return [firstNum, secondNum];
-};
+const numForRandom = 10;
 
 const getGCD = (arr) => {
-  const firstEl = arr[0];
-  const secondEl = arr[1];
+  const [firstEl, secondEl] = arr;
   const recur = (num1, num2) => {
     const a = num1 > num2 ? num1 : num2;
     const b = num1 < num2 ? num1 : num2;
@@ -25,11 +19,12 @@ const getGCD = (arr) => {
   return recur(firstEl, secondEl);
 };
 
-const isAnswerCorrect = getGCD;
-
-const gameGCD = () => {
-  const makeArrayOfAnswers = [makeQuestionElements, isAnswerCorrect];
-  return generalGameLogic(message, makeArrayOfAnswers);
+const makeQuestionAnswer = () => {
+  const [firstNum, secondNum] = makeArray(makeRandomNum(numForRandom), makeRandomNum(numForRandom));
+  const question = makeArray(firstNum, secondNum);
+  return makeArray(question, getGCD(question));
 };
 
-export default gameGCD;
+const palyGameGCD = () => executeGameLogic(message, makeQuestionAnswer);
+
+export default palyGameGCD;

@@ -1,13 +1,14 @@
 import executeGameLogic from '../index.js';
-import makeRandomNum from '../random.js';
+import { makeRandomNum, makeArray } from '../libraryGames.js';
 
 const message = 'What is the result of the expression?';
 
 const numForRandom = 9;
 
 const makeOperator = () => {
-  const operations = ['+', '-', '*'];
-  return operations[makeRandomNum(operations.length - 1)];
+  const operations = makeArray('+', '-', '*');
+  const index = makeRandomNum(operations.length - 1);
+  return operations[index];
 };
 
 const produceCalculation = (num1, operator, num2) => {
@@ -31,10 +32,10 @@ const makeAnswer = (expression) => {
 
 const makeQuestionAnswer = () => {
   const [firstNum, secondNum, operation] = [makeRandomNum, makeRandomNum, makeOperator];
-  const expression = [firstNum(numForRandom), operation(), secondNum(numForRandom)];
-  return [expression, makeAnswer(expression)];
+  const expression = makeArray(firstNum(numForRandom), operation(), secondNum(numForRandom));
+  return makeArray(expression, makeAnswer(expression));
 };
 
-const calculation = () => executeGameLogic(message, makeQuestionAnswer);
+const playGameCalculation = () => executeGameLogic(message, makeQuestionAnswer);
 
-export default calculation;
+export default playGameCalculation;
