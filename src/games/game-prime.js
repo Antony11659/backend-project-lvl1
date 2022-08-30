@@ -9,8 +9,8 @@ const isPrime = (number) => {
   if (number <= 1) {
     return false;
   }
-  const iter = (n) => (number % n === 0 ? n : iter(n + 1));
-  const smallestDivisor = iter(2);
+  const findSmallestDivisor = (n) => (number % n === 0 ? n : findSmallestDivisor(n + 1));
+  const smallestDivisor = findSmallestDivisor(2);
   return number === smallestDivisor;
 };
 
