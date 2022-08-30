@@ -1,17 +1,13 @@
 import executeGameLogic from '../index.js';
-import { makeRandomNum, makeArray } from '../libraryGames.js';
+import { makeRandomNum } from '../libraryGames.js';
 
 const message = 'What is the result of the expression?';
 
-const numForRandom = 9;
+const numForRandom = 10;
 
-const makeOperator = () => {
-  const operations = makeArray('+', '-', '*');
-  const index = makeRandomNum(operations.length - 1);
-  return operations[index];
-};
+const operations = ['+', '-', '*'];
 
-const produceCalculation = (num1, operator, num2) => {
+const calculate = (num1, operator, num2) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -25,15 +21,13 @@ const produceCalculation = (num1, operator, num2) => {
   }
 };
 
-const makeAnswer = (expression) => {
-  const [num1, operator, num2] = expression;
-  return produceCalculation(num1, operator, num2);
-};
-
 const makeQuestionAnswer = () => {
-  const [firstNum, secondNum, operation] = [makeRandomNum, makeRandomNum, makeOperator];
-  const expression = makeArray(firstNum(numForRandom), operation(), secondNum(numForRandom));
-  return makeArray(expression, makeAnswer(expression));
+  const number1 = makeRandomNum(numForRandom);
+  const number2 = makeRandomNum(numForRandom);
+  const operator = operations[makeRandomNum(operations.length - 1)];
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = calculate(number1, operator, number2);
+  return [question, answer];
 };
 
 const playGameCalculation = () => executeGameLogic(message, makeQuestionAnswer);

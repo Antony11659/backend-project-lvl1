@@ -1,9 +1,9 @@
 import executeGameLogic from '../index.js';
-import { makeRandomNum, makeArray } from '../libraryGames.js';
+import { makeRandomNum } from '../libraryGames.js';
 
 const message = 'What number is missing in this progression?';
 
-const arrayLength = 10;
+const progressionLength = 10;
 
 const maxGapBetweenElements = 5;
 
@@ -13,7 +13,7 @@ const sizeOfFistEl = 8;
 
 const makeSequence = (sequenceLength) => {
   const result = [];
-  const el = [];
+  let el = 0;
   const hiddenEl = makeRandomNum(sequenceLength - 1);
   const gap = makeRandomNum(maxGapBetweenElements, minGapBetweenElements);
   let firstNum = makeRandomNum(sizeOfFistEl);
@@ -21,18 +21,18 @@ const makeSequence = (sequenceLength) => {
     if (i === hiddenEl) {
       result.push('..');
       firstNum += gap;
-      el.push(firstNum);
+      el = firstNum;
     } else {
       firstNum += gap;
       result.push(firstNum);
     }
   }
-  return makeArray(result, el);
+  return [result.join(' '), el];
 };
 
 const makeQuestionAnswer = () => {
-  const [question, answer] = makeSequence(arrayLength);
-  return makeArray(question, answer);
+  const [question, answer] = makeSequence(progressionLength);
+  return [question, answer];
 };
 
 const playGameProgression = () => executeGameLogic(message, makeQuestionAnswer);
