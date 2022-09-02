@@ -1,5 +1,5 @@
 import executeGameLogic from '../index.js';
-import { makeRandomNum } from '../libraryGames.js';
+import makeRandomNum from '../libraryGames.js';
 
 const message = 'What is the result of the expression?';
 

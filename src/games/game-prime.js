@@ -1,10 +1,11 @@
 import executeGameLogic from '../index.js';
-import makeYesNoAnswer, { makeRandomNum } from '../libraryGames.js';
+import makeRandomNum from '../libraryGames.js';
 
 const message = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 const numForRandom = 10;
 
+const makeYesNoAnswer = (value) => (value ? 'yes' : 'no');
 const isPrime = (number) => {
   if (number <= 1) {
     return false;

@@ -1,5 +1,5 @@
 import executeGameLogic from '../index.js';
-import { makeRandomNum } from '../libraryGames.js';
+import makeRandomNum from '../libraryGames.js';
 
 const message = 'Find the greatest common divisor of given numbers.';
 

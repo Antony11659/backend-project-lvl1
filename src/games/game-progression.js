@@ -1,5 +1,5 @@
 import executeGameLogic from '../index.js';
-import { makeRandomNum } from '../libraryGames.js';
+import makeRandomNum from '../libraryGames.js';
 
 const message = 'What number is missing in this progression?';
 
@@ -11,27 +11,21 @@ const minGapBetweenElements = 1;
 
 const sizeOfFistEl = 8;
 
-const makeSequence = (sequenceLength) => {
+const makeSequence = (first, step) => {
   const result = [];
-  let el = 0;
-  const hiddenEl = makeRandomNum(sequenceLength - 1);
-  const gap = makeRandomNum(maxGapBetweenElements, minGapBetweenElements);
-  let firstNum = makeRandomNum(sizeOfFistEl);
-  for (let i = 0; i < sequenceLength; i += 1) {
-    if (i === hiddenEl) {
-      result.push('..');
-      firstNum += gap;
-      el = firstNum;
-    } else {
-      firstNum += gap;
-      result.push(firstNum);
-    }
+  for (let i = 0; i < progressionLength; i += 1) {
+    result.push(first + (step * i));
   }
-  return [result.join(' '), el];
+  return result;
 };
 
 const makeQuestionAnswer = () => {
-  const [question, answer] = makeSequence(progressionLength);
+  const gap = makeRandomNum(maxGapBetweenElements, minGapBetweenElements);
+  const firstNum = makeRandomNum(sizeOfFistEl);
+  const indexOfHiddenElement = makeRandomNum(progressionLength);
+  const sequence = makeSequence(firstNum, gap);
+  const question = sequence.map((el, i) => (i === indexOfHiddenElement ? '..' : el)).join(' ');
+  const answer = sequence[indexOfHiddenElement];
   return [question, answer];
 };
 
