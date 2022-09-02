@@ -22,7 +22,7 @@ const makeSequence = (first, step) => {
 const makeQuestionAnswer = () => {
   const gap = makeRandomNum(maxGapBetweenElements, minGapBetweenElements);
   const firstNum = makeRandomNum(sizeOfFistEl);
-  const indexOfHiddenElement = makeRandomNum(progressionLength);
+  const indexOfHiddenElement = makeRandomNum(progressionLength - 1);
   const sequence = makeSequence(firstNum, gap);
   const question = sequence.map((el, i) => (i === indexOfHiddenElement ? '..' : el)).join(' ');
   const answer = sequence[indexOfHiddenElement];
