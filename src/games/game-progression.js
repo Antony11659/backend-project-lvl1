@@ -20,13 +20,14 @@ const makeSequence = (first, step) => {
 };
 
 const makeQuestionAnswer = () => {
-  const gap = makeRandomNum(maxGapBetweenElements, minGapBetweenElements);
-  const firstNum = makeRandomNum(sizeOfFistEl);
-  const indexOfHiddenElement = makeRandomNum(progressionLength - 1);
+  const gap = makeRandomNum(minGapBetweenElements, maxGapBetweenElements);
+  const firstNum = makeRandomNum(0, sizeOfFistEl);
+  const indexOfHiddenElement = makeRandomNum(0, progressionLength - 1);
   const sequence = makeSequence(firstNum, gap);
-  const question = sequence.map((el, i) => (i === indexOfHiddenElement ? '..' : el)).join(' ');
+  const question = sequence.slice();
+  question[indexOfHiddenElement] = '..';
   const answer = sequence[indexOfHiddenElement];
-  return [question, answer];
+  return [question.join(' '), answer.toString()];
 };
 
 const playGameProgression = () => executeGameLogic(message, makeQuestionAnswer);

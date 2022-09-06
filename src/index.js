@@ -15,9 +15,9 @@ const executeGameLogic = (gameRule, generateRoundData) => {
     const [question, answer] = generateRoundData();
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
 
-    if (userAnswer !== answer.toString()) {
+    if (userAnswer !== answer) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${answer}`);
-      console.log(`nLet's try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
     console.log('Correct!');

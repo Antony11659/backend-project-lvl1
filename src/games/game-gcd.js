@@ -8,11 +8,11 @@ const numForRandom = 10;
 const getGCD = (a, b) => (b === 0 ? a : getGCD(b, a % b));
 
 const makeQuestionAnswer = () => {
-  const number1 = makeRandomNum(numForRandom);
-  const number2 = makeRandomNum(numForRandom);
+  const number1 = makeRandomNum(0, numForRandom);
+  const number2 = makeRandomNum(0, numForRandom);
   const question = `${number1} ${number2}`;
   const answer = getGCD(number1, number2);
-  return [question, answer];
+  return [question, answer.toString()];
 };
 
 const palyGameGCD = () => executeGameLogic(message, makeQuestionAnswer);

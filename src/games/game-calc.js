@@ -22,12 +22,12 @@ const calculate = (num1, operator, num2) => {
 };
 
 const makeQuestionAnswer = () => {
-  const number1 = makeRandomNum(numForRandom);
-  const number2 = makeRandomNum(numForRandom);
-  const operator = operations[makeRandomNum(operations.length - 1)];
+  const number1 = makeRandomNum(0, numForRandom);
+  const number2 = makeRandomNum(0, numForRandom);
+  const operator = operations[makeRandomNum(0, operations.length - 1)];
   const question = `${number1} ${operator} ${number2}`;
   const answer = calculate(number1, operator, number2);
-  return [question, answer];
+  return [question, answer.toString()];
 };
 
 const playGameCalculation = () => executeGameLogic(message, makeQuestionAnswer);
